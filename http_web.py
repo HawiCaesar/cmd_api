@@ -2,21 +2,15 @@ import requests
 
 def get_api_data(url, post_id):
 
-	r = requests.get(url + post_id)
-	print(r)
+	response = requests.get(url + post_id)
+	return response
 		
 
-def post_data_to_api(post_url, title, body, userId=11):
-	post_data = {
-		'title': title,
-		'body': body,
-		'userId': userId
-		}
-	r = requests.post(post_url, data=post_data)
-	return r
+def post_data_to_api(post_url):
+	pass
 
 def main():
-	get_api_data('https://jsonplaceholder.typicode.com/posts/', 'tyt')
+	get_api_data('https://jsonplaceholder.typicode.com/posts/', '3')
 
 
 
