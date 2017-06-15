@@ -26,26 +26,26 @@ def post_data_to_api(post_url, title, body):
 
 def main():
 	
-	print "******** Command Line Http Web API App ********"
+	print("******** Command Line Http Web API App ********")
 
 	post_number = raw_input("Please enter a number between 1 and 100 \n")
 
-	print "Fetching your the post you want....\n"
+	print("Fetching your the post you want....\n")
 	
 	response = get_api_data('https://jsonplaceholder.typicode.com/posts/', '3')
 
-	print "Headers"
-	print response.headers
-	print "-"*15
-	print "Status Code"
-	print response.status_code
-	print "-"*15
-	print "GET Response data"
-	print response.text
-	print "-"*15
+	print("Headers")
+	print(response.headers)
+	print("-"*15)
+	print("Status Code")
+	print(response.status_code)
+	print("-"*15)
+	print("GET Response data")
+	print(response.text)
+	print("-"*15)
 	
-	print "Looking good so far...."
-	print "Now let's create a post"
+	print("Looking good so far....")
+	print("Now let's create a post")
 
 	title = raw_input("Enter the title of your post: ")
 	body = raw_input("Enter the body for your post: ")
@@ -53,19 +53,19 @@ def main():
 	print("\n\tCreating your new post...\n")
 	post_response = post_data_to_api('https://jsonplaceholder.typicode.com/posts/', title, body)
 
-	print "Headers"
-	print post_response.headers
-	print "-"*15
-	print "Status Code"
-	print post_response.status_code
-	print "-"*15
-	print "GET Response data"
-	print post_response.text
-	print "-"*15
+	print("Headers")
+	print(post_response.headers)
+	print("-"*15)
+	print("Status Code")
+	print(post_response.status_code)
+	print("-"*15)
+	print("GET Response data")
+	print(post_response.text)
+	print("-"*15)
 
-	print "\n\n\n"
+	print("\n\n\n")
 
-	print "Good Stuff! Thank you for consuming the API"
+	print("Good Stuff! Thank you for consuming the API")
 
 
 
