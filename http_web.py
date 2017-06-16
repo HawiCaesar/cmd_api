@@ -1,15 +1,21 @@
 import requests
 
 # Runs a get request and returns result
-def get_api_data(url, post_id):
+def get_api_data(url, url_id):
+	post_id = url_id
 
-	try:
-		check_value = int(post_id)
 
-		response = requests.get(url + post_id)
+	if isinstance(url_id, str): # if url is string
+		try:
+			check_value = int(post_id)
 
-	except :
-		raise ValueError("Please enter whole numbers from 1 to 100")
+			response = requests.get(url + post_id)
+
+		except:
+			raise ValueError("Please enter whole numbers from 1 to 100 to get post") 
+	else:
+		response = requests.get(url + url_id)
+
 
 	return response
 
@@ -30,9 +36,9 @@ def main():
 
 	post_number = raw_input("Please enter a number between 1 and 100 \n")
 
-	print("Fetching your the post you want....\n")
+	print("Fetching the post you want....\n")
 	
-	response = get_api_data('https://jsonplaceholder.typicode.com/posts/', '3')
+	response = get_api_data('https://jsonplaceholder.typicode.com/posts/', post_number)
 
 	print("Headers")
 	print(response.headers)
@@ -58,9 +64,6 @@ def main():
 	print("-"*15)
 	print("Status Code")
 	print(post_response.status_code)
-	print("-"*15)
-	print("GET Response data")
-	print(post_response.text)
 	print("-"*15)
 
 	print("\n\n\n")
