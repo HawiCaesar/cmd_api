@@ -9,7 +9,7 @@ def get_api_data(url, url_id):
 		try:
 			check_value = int(post_id)
 
-			response = requests.get(url + post_id)
+			response = requests.get(url + url_id)
 
 		except:
 			raise ValueError("Please enter whole numbers from 1 to 100 to get post") 
